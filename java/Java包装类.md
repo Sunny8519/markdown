@@ -160,7 +160,7 @@ public boolean equals(Object obj) {
 }
 ```
 
-从上面八种包装类的equals()方法的源码来看，有六种包装类的equals()方法的实现原理是相同的，比较的都是包装类中的基本数据类型变量的值，只有Float和Double的稍有差异，下面我们再具体看一看这两个类的euqals()方法实现：
+从上面八种包装类的equals()方法的源码来看，**它们在比较之前会先判断传进来的参数是否是当前包装类的类型，如果不是就判定不相等**，并且有六种包装类的equals()方法的实现原理是相似的，比较的都是包装类中的基本数据类型变量的值，只有Float和Double的稍有差异，下面我们再具体看一看这两个类的euqals()方法实现：
 
 ```java
 //Float类
@@ -330,7 +330,7 @@ Java是否存在使得语句i > j || i <= j结果为false的i，j值？
 
 这个题目的答案就是NaN，是不是很变态，因为NaN和任何数比较都是false，它并不是一个数(not a number)。
 
-##### 5.数值类型的包装类实现了Number抽象类
+##### 5.数值类型包装类继承Number抽象类
 
 Number是一个抽象类，定义了下面几个方法：
 
@@ -364,7 +364,3 @@ public short shortValue() {
 #### 参考
 
 [剖析包装类上](http://mp.weixin.qq.com/s/ZvJ0ya-mNetZiJBgCTu-7g)
-
-[剖析包装类中](http://mp.weixin.qq.com/s/QHRVfZmTahti_jFoTa-GQw)
-
-[剖析包装类下](http://mp.weixin.qq.com/s/X0Ya2sQYBCzpJS81aSb2aw)
